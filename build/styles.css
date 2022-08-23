@@ -1,12 +1,19 @@
-.game {
+.container {
   width: 800px;
   height: 400px;
-  background-image: url(imgs/background.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
   border: 1px solid black;
   margin: auto;
   position: relative;
+  opacity: 0.8;
+}
+
+.game {
+  height: 100%;
+  background-image: url(imgs/background.jpg);
+  background-size: 100%;
+  animation: backgroundMoveAnimation 7.5s linear infinite;
+  animation-fill-mode: forwards;
+  overflow: hidden;
 }
 
 #weight {
@@ -62,5 +69,14 @@
 
   100% {
     left: -20px;
+  }
+}
+
+@keyframes backgroundMoveAnimation {
+  0% {
+    background-position: -2000px;
+  }
+  100% {
+    background-position: -2500px;
   }
 }
