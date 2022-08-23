@@ -1,6 +1,9 @@
 .game {
-  width: 600px;
-  height: 200px;
+  width: 800px;
+  height: 400px;
+  background-image: url(imgs/background.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
   border: 1px solid black;
   margin: auto;
   position: relative;
@@ -18,7 +21,7 @@
   background-image: url(imgs/joe.png);
   background-size: 60px 60px;
   position: relative;
-  top: 140px;
+  top: 340px;
 }
 
 #joeBetterShape {
@@ -36,7 +39,7 @@
   background-image: url(imgs/hamburger.png);
   background-size: 25px 25px;
   position: relative;
-  top: 110px;
+  top: 310px;
   left: 200px;
   animation: rightToLeftAnimation 2s infinite linear;
 }
