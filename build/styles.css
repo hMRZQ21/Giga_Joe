@@ -18,7 +18,7 @@
   background-image: url(imgs/joe.png);
   background-size: 60px 60px;
   position: relative;
-  top: 145px;
+  top: 140px;
 }
 
 #joeBetterShape {
@@ -27,7 +27,7 @@
   background-image: url(imgs/joeBetterShape.png);
   background-size: 60px 60px;
   position: relative;
-  top: 145px;
+  top: 100px;
 }
 
 #hamburger {
@@ -42,13 +42,13 @@
 }
 
 .jump {
-  animation: jump 0.3s linear;
+  animation: jump 2s infinite linear;
 }
 
 /* Keyframes */
 @keyframes jump {
   0% {
-    top: 50px;
+    top: 25px;
   }
 }
 

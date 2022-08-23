@@ -1,5 +1,6 @@
 // Variables
 const joe = document.getElementById('joe');
+const hamburger = document.getElementById('hamburger');
 let weight = document.getElementById('weightNumber');
 
 // Makes character jump if space is pressed
@@ -9,9 +10,24 @@ function jump(event) {
     weight.innerHTML = parseInt(weight.innerHTML) - 10;
     setTimeout(function () {
       joe.classList.remove('jump');
-    }, 300);
+    }, 500);
   }
 }
+
+//Collision function
+let isAlive = setInterval(function () {
+    //Joe's current Y postion
+    let joeTop = parseInt(window.getComputedStyle(joe).getPropertyValue("top"));
+
+    //get Hamburger's current x position
+    let hamburgerLeft = parseInt(window.getComputedStyle(hamburger).getPropertyValue("left"));
+
+    //detect collison
+    if(hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >=100){
+        console.log("Game Over!");
+    }
+
+}, 10);
 
 // Event handlers
 document.addEventListener('keydown', function (event) {
