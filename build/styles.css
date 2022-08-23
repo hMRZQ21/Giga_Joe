@@ -31,7 +31,7 @@
   position: relative;
   top: 110px;
   left: 200px;
-  animation: hamburgerAnimation 1s infinite linear;
+  animation: rightToLeftAnimation 2s infinite linear;
 }
 
 .jump {
@@ -45,7 +45,7 @@
   }
 }
 
-@keyframes hamburgerAnimation {
+@keyframes rightToLeftAnimation {
   0% {
     left: 500px;
   }
