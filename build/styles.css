@@ -23,13 +23,14 @@
 }
 
 #joe {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-image: url(imgs/joe.png);
   background-size: 60px 60px;
   position: relative;
   top: 340px;
   animation-direction: alternate;
+  background-repeat: no-repeat;
 }
 
 #joeBetterShape {

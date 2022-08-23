@@ -23,11 +23,12 @@ let isAlive = setInterval(function () {
     let hamburgerLeft = parseInt(window.getComputedStyle(hamburger).getPropertyValue("left"));
 
     //detect collison
-    if(hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >=50){
+    if(hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >=300){
         console.log("Game Over!");
+        weight.innerHTML = parseInt(weight.innerHTML) + 5;
     }
 
-}, 10);
+}, 100);
 
 // Event handlers
 document.addEventListener('keydown', function (event) {
