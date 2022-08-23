@@ -1,13 +1,17 @@
-const fatMan = document.getElementById("fatMan");
+// Variables
+const fatMan = document.getElementById('fatMan');
 
-function jump(){
-    if(fatMan.classList != "jump"){
-        fatMan.classList.add("jump");
-        setTimeout(function(){
-            fatMan.classList.remove("jump");
-        }, 300)
-    }
-
+// Makes character jump if space is pressed
+function jump(event) {
+  if (fatMan.classList != 'jump' && event.which === 32) {
+    fatMan.classList.add('jump');
+    setTimeout(function () {
+      fatMan.classList.remove('jump');
+    }, 300);
+  }
 }
 
-document.addEventListener("keydown", function(event){jump()})
+// Event handlers
+document.addEventListener('keydown', function (event) {
+  jump(event);
+});
