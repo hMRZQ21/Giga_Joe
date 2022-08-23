@@ -8,7 +8,16 @@
 #fatMan {
   width: 60px;
   height: 60px;
-  background-image: url(imgs/fatMan\ no\ BG.png);
+  background-image: url(imgs/fatMan.png);
+  background-size: 60px 60px;
+  position: relative;
+  top: 145px;
+}
+
+#fatManBetterShape {
+  width: 60px;
+  height: 60px;
+  background-image: url(imgs/fatManBetterShape.png);
   background-size: 60px 60px;
   position: relative;
   top: 145px;
@@ -22,14 +31,26 @@
   position: relative;
   top: 110px;
   left: 200px;
+  animation: hamburgerAnimation 1s infinite linear;
 }
 
 .jump {
   animation: jump 0.3s linear;
 }
 
+/* Keyframes */
 @keyframes jump {
   0% {
     top: 50px;
+  }
+}
+
+@keyframes hamburgerAnimation {
+  0% {
+    left: 500px;
+  }
+
+  100% {
+    left: -20px;
   }
 }
