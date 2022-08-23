@@ -11,7 +11,7 @@
   height: 100%;
   background-image: url(imgs/background.jpg);
   background-size: 100%;
-  animation: backgroundMoveAnimation 7.5s linear infinite;
+  animation: backgroundMoveAnimation 6s linear infinite;
   animation-fill-mode: forwards;
   overflow: hidden;
 }
@@ -29,6 +29,7 @@
   background-size: 60px 60px;
   position: relative;
   top: 340px;
+  animation-direction: alternate;
 }
 
 #joeBetterShape {
@@ -58,13 +59,13 @@
 /* Keyframes */
 @keyframes jump {
   0% {
-    top: 25px;
+    top: 250px;
   }
 }
 
 @keyframes rightToLeftAnimation {
   0% {
-    left: 500px;
+    left: 750px;
   }
 
   100% {
@@ -74,9 +75,9 @@
 
 @keyframes backgroundMoveAnimation {
   0% {
-    background-position: -2000px;
+    background-position: -100px;
   }
   100% {
-    background-position: -2500px;
+    background-position: -901px;
   }
 }
