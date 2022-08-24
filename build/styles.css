@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body {
+  font-family: 'Silkscreen', cursive;
+}
+
 .container {
   width: 800px;
   height: 400px;
@@ -20,6 +26,11 @@
   font-size: 10px;
   position: absolute;
   right: 0;
+}
+
+#score {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.341);
 }
 
 #joe {
@@ -51,7 +62,7 @@
   position: relative;
   top: 280px;
   left: 200px;
-  animation: rightToLeftAnimation 2s infinite linear;
+  animation: hamburgerAnimation 2s infinite linear;
 }
 
 .jump {
@@ -65,7 +76,7 @@
   }
 }
 
-@keyframes rightToLeftAnimation {
+@keyframes hamburgerAnimation {
   0% {
     left: 750px;
   }
