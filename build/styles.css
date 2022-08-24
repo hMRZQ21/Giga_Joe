@@ -34,22 +34,23 @@ body {
 }
 
 #joe {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 90px;
   background-image: url(imgs/joe.png);
-  background-size: 60px 60px;
+  background-size: 60px 90px;
   position: relative;
-  top: 320px;
+  top: 300px;
   animation-direction: alternate;
   background-repeat: no-repeat;
+  
 }
 
 /* Not being used yet */
 #joeBetterShape {
   width: 60px;
-  height: 60px;
+  height: 90px;
   background-image: url(imgs/joeBetterShape.png);
-  background-size: 60px 60px;
+  background-size: 60px 90px;
   position: relative;
   top: 100px;
 }
@@ -60,19 +61,19 @@ body {
   background-image: url(imgs/hamburger.png);
   background-size: 25px 25px;
   position: relative;
-  top: 280px;
+  top: 270px;
   left: 200px;
   animation: hamburgerAnimation 2s infinite linear;
 }
 
 .jump {
-  animation: jump 2s infinite linear;
+  animation: jump .7s infinite linear;
 }
 
 /* Keyframes */
 @keyframes jump {
   0% {
-    top: 250px;
+    top: 230px;
   }
 }
 
