@@ -4,6 +4,10 @@ const hamburger = document.getElementById('hamburger');
 let weight = document.getElementById('weightNumber');
 let joeShapes = ['imgs/joe.png', 'imgs/joeBetterShape.png'];
 
+let audio = new Audio('audios/theme_song.mp3');
+audio.volume = 0.1;
+audio.play();
+
 // Makes character jump if space is pressed
 function jump(event) {
   if (joe.classList != 'jump' && event.which === 32) {
