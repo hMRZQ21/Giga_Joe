@@ -66,6 +66,17 @@ body {
   animation: hamburgerAnimation 2s infinite linear;
 }
 
+#apple{
+  width: 60px;
+  height: 60px;
+  background-image: url(imgs/apple-pixel-art.png);
+  background-size: 60px 60px;
+  position: relative;
+  top: 200px;
+  left: 200px;
+  /* animation goes here */
+}
+
 .jump {
   animation: jump .7s infinite linear;
 }
