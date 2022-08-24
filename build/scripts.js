@@ -16,21 +16,23 @@ function jump(event) {
 
 //Collision function
 let isAlive = setInterval(function () {
-    //Joe's current Y postion
-    let joeTop = parseInt(window.getComputedStyle(joe).getPropertyValue("top"));
+  //Joe's current Y postion
+  let joeTop = parseInt(window.getComputedStyle(joe).getPropertyValue('top'));
 
-    //get Hamburger's current x position
-    let hamburgerLeft = parseInt(window.getComputedStyle(hamburger).getPropertyValue("left"));
+  //get Hamburger's current x position
+  let hamburgerLeft = parseInt(
+    window.getComputedStyle(hamburger).getPropertyValue('left')
+  );
 
-    //detect collison
-    if(hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >=300){
-        console.log("Game Over!");
-        weight.innerHTML = parseInt(weight.innerHTML) + 5;
-    }
-
+  //detect collison
+  if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
+    console.log('Game Over!');
+    weight.innerHTML = parseInt(weight.innerHTML) + 5;
+  }
 }, 100);
 
 // Event handlers
 document.addEventListener('keydown', function (event) {
+  if (event.repeat) return;
   jump(event);
 });
