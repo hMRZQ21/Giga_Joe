@@ -5,17 +5,17 @@ let weight = document.getElementById('weightNumber');
 
 // Makes character jump if space is pressed
 function jump(event) {
-  if (joe.classList != 'jump' && event.which === 32) {
+  if(joe.classList != 'jump' && event.which === 32) {
     joe.classList.add('jump');
     weight.innerHTML = parseInt(weight.innerHTML) - 10;
     setTimeout(function () {
       joe.classList.remove('jump');
-    }, 500);
+    }, 700);
   }
 }
 
 //Collision function
-let isAlive = setInterval(function () {
+let isAlive = setInterval(function() {
     //Joe's current Y postion
     let joeTop = parseInt(window.getComputedStyle(joe).getPropertyValue("top"));
 
@@ -28,7 +28,7 @@ let isAlive = setInterval(function () {
         weight.innerHTML = parseInt(weight.innerHTML) + 5;
     }
 
-}, 100);
+}, 200);
 
 // Event handlers
 document.addEventListener('keydown', function (event) {
