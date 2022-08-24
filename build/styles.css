@@ -28,11 +28,12 @@
   background-image: url(imgs/joe.png);
   background-size: 60px 60px;
   position: relative;
-  top: 340px;
+  top: 320px;
   animation-direction: alternate;
   background-repeat: no-repeat;
 }
 
+/* Not being used yet */
 #joeBetterShape {
   width: 60px;
   height: 60px;
@@ -48,7 +49,7 @@
   background-image: url(imgs/hamburger.png);
   background-size: 25px 25px;
   position: relative;
-  top: 310px;
+  top: 280px;
   left: 200px;
   animation: rightToLeftAnimation 2s infinite linear;
 }
