@@ -25,7 +25,8 @@ let isAlive = setInterval(function() {
     //detecting collison
     if(hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300){
         weight.innerHTML = parseInt(weight.innerHTML) + 5;
-        if(weight.innerHTML > 300){ alert("Game Over!"); } 
+        if(weight.innerHTML > 300){ alert("Game Over!"); }
+        if(weight.innerHTML <= 100){ alert("You won! Joe is in the best shape of his life.")} 
     }
 }, 150);
 
