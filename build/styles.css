@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
-body {
-  font-family: 'Silkscreen', cursive;
-}
-
 .game {
   width: 800px;
   height: 400px;
@@ -14,11 +10,11 @@ body {
   background-image: url(imgs/background.jpg);
   background-size: 100%;
   animation: backgroundMoveAnimation 6s linear infinite;
-  animation-fill-mode: forwards;
   overflow: hidden;
 }
 
 #weight {
+  font-family: 'Silkscreen', cursive;
   font-size: 10px;
   position: absolute;
   right: 0;
