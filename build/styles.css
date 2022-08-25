@@ -30,10 +30,10 @@
   height: 90px;
   background-image: url(imgs/joe.png);
   background-size: 60px 90px;
+  background-repeat: no-repeat;
   position: relative;
   top: 300px;
   animation-direction: alternate;
-  background-repeat: no-repeat;
 }
 
 /* Not being used yet */
@@ -72,7 +72,17 @@
   animation: jump 0.7s infinite linear;
 }
 
+.joeOverweightWalk {
+  animation: joeOverweightAnimation 0.2s infinite linear;
+}
+
 /* Keyframes */
+@keyframes joeOverweightAnimation {
+  100% {
+    background-image: url(imgs/joe2.png);
+  }
+}
+
 @keyframes jump {
   0% {
     top: 230px;

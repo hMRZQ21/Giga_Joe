@@ -13,11 +13,22 @@ audio.play();
 function jump(event) {
   if (joe.classList != 'jump' && event.which === 32) {
     joe.classList.add('jump');
+    joe.classList.remove('joeOverweightWalk');
     weight.innerHTML = parseInt(weight.innerHTML) - 10;
     setTimeout(function () {
       joe.classList.remove('jump');
+      joe.classList.add('joeOverweightWalk');
     }, 700);
   }
+}
+
+function joeOverweightAnimation() {
+  if (joe.classList != 'joeOverweightWalk') {
+    joe.classList.add('joeOverweightWalk');
+  }
+  setTimeout(function () {
+    joe.classList.remove('joeOverweightWalk');
+  }, 9999999999);
 }
 
 //Collision function
@@ -39,10 +50,12 @@ let isAlive = setInterval(() => {
     weight.innerHTML = parseInt(weight.innerHTML) + 20;
     if (weight.innerHTML > 320) {
       toggleRestart();
-      document.querySelector('.restart-btn').addEventListener('click', function(){
-        window.location.reload();
-        return false;
-      });
+      document
+        .querySelector('.restart-btn')
+        .addEventListener('click', function () {
+          window.location.reload();
+          return false;
+        });
     }
     if (weight.innerHTML <= 100) {
       alert('You won! Joe is in the best shape of his life.');
@@ -70,7 +83,9 @@ document.addEventListener('keydown', function (event) {
 });
 
 // Functions for restart
-function toggleRestart(){
+function toggleRestart() {
   var myRestart = document.getElementById('restart');
   myRestart.style.display = 'block';
 }
+
+joeOverweightAnimation();
