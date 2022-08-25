@@ -45,7 +45,7 @@ let collision = setInterval(() => {
 
   // Detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
-    weight.innerHTML = parseInt(weight.innerHTML) + 20;
+    
     if (weight.innerHTML > 320) {
       toggleGameOver();
       document
@@ -55,6 +55,10 @@ let collision = setInterval(() => {
           return false;
         });
     }
+    else{
+      weight.innerHTML = parseInt(weight.innerHTML) + 20;
+    }
+    
     if (weight.innerHTML <= 100) {
       alert('You won! Joe is in the best shape of his life.');
     }
