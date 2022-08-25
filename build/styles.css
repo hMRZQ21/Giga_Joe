@@ -72,7 +72,7 @@
   position: relative;
   top: 200px;
   left: 200px;
-  animation: appleAnimation 4s infinite linear;
+  animation: appleAnimation 4.5s infinite linear;
 }
 
 .jump {
@@ -97,6 +97,20 @@
   display: none;
 }
 
+#win {
+  width: 500px;
+  height: 250px;
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(2, 191, 248, 0.753);
+  display: none;
+}
+
 .restart-btn {
   border: none;
   background-color: rgba(0, 0, 0, 0.753);
@@ -110,6 +124,22 @@
 .restart-btn:hover {
   background-color: rgb(55, 49, 49);
 }
+
+/*Second restart btn for win*/
+.restart-btn2 {
+  border: none;
+  background-color: rgba(41, 150, 14, 0.753);
+  color: white;
+  height: 40px;
+  position: relative;
+  top: 80px;
+  cursor: pointer;
+}
+
+.restart-btn2:hover {
+  background-color: rgb(55, 49, 49);
+}
+
 
 /* Keyframes */
 @keyframes joeOverweightAnimation {

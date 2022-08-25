@@ -42,7 +42,16 @@ let collision = setInterval(() => {
   let appleLeft = parseInt(
     window.getComputedStyle(apple).getPropertyValue('left')
   );
-
+  //Checking if weight under an amount and win
+  if (weight.innerHTML <= 250) {
+    toggleWin();
+    document
+      .querySelector('.restart-btn2')
+      .addEventListener('click', function () {
+        window.location.reload();
+        return false;
+      });
+    }
   // Detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
     
@@ -58,13 +67,10 @@ let collision = setInterval(() => {
     else{
       weight.innerHTML = parseInt(weight.innerHTML) + 20;
     }
-    
-    if (weight.innerHTML <= 100) {
-      alert('You won! Joe is in the best shape of his life.');
-    }
   }
+  
   if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
-    weight.innerHTML = parseInt(weight.innerHTML) - 5;
+    weight.innerHTML = parseInt(weight.innerHTML) - 20;
   }
 }, 150);
 
@@ -88,6 +94,15 @@ document.addEventListener('keydown', function (event) {
 // Functions for restart
 function toggleGameOver() {
   let myGame = document.getElementById('game-over');
+  myGame.style.display = 'block';
+  document.getElementById('game').style.animationPlayState = 'paused';
+  document.getElementById('joe').style.animationPlayState = 'paused';
+  document.getElementById('hamburger').style.animationPlayState = 'paused';
+  document.getElementById('apple').style.animationPlayState = 'paused';
+}
+
+function toggleWin() {
+  let myGame = document.getElementById('win');
   myGame.style.display = 'block';
   document.getElementById('game').style.animationPlayState = 'paused';
   document.getElementById('joe').style.animationPlayState = 'paused';
