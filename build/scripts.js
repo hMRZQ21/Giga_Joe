@@ -61,7 +61,7 @@ let isAlive = setInterval(() => {
       alert('You won! Joe is in the best shape of his life.');
     }
   }
-  if (appleLeft < 60 && appleLeft > 0 && joeTop >= 300) {
+  if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
     weight.innerHTML = parseInt(weight.innerHTML) - 5;
   }
 }, 150);
