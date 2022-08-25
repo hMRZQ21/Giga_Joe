@@ -65,7 +65,7 @@
   position: relative;
   top: 200px;
   left: 200px;
-  /* animation goes here */
+  animation: appleAnimation 5s infinite linear;
 }
 
 .jump {
@@ -82,6 +82,16 @@
 @keyframes hamburgerAnimation {
   0% {
     left: 750px;
+  }
+
+  100% {
+    left: -20px;
+  }
+}
+
+@keyframes appleAnimation {
+  0% {
+    left: 2000px;
   }
 
   100% {

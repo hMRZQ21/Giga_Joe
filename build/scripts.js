@@ -1,6 +1,7 @@
 // Variables
 const joe = document.getElementById('joe');
 const hamburger = document.getElementById('hamburger');
+const apple = document.getElementById('apple');
 let weight = document.getElementById('weightNumber');
 let joeShapes = ['imgs/joe.png', 'imgs/joeBetterShape.png'];
 
@@ -29,7 +30,11 @@ let isAlive = setInterval(() => {
     window.getComputedStyle(hamburger).getPropertyValue('left')
   );
 
-  //detecting collison
+  let appleLeft = parseInt(
+    window.getComputedStyle(apple).getPropertyValue('left')
+  );
+
+  //detecting collison of hamburger
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
     weight.innerHTML = parseInt(weight.innerHTML) + 5;
     if (weight.innerHTML > 320) {
@@ -38,6 +43,9 @@ let isAlive = setInterval(() => {
     if (weight.innerHTML <= 100) {
       alert('You won! Joe is in the best shape of his life.');
     }
+  }
+  if (appleLeft < 60 && appleLeft > 0 && joeTop >= 300) {
+    weight.innerHTML = parseInt(weight.innerHTML) - 5;
   }
 }, 150);
 
