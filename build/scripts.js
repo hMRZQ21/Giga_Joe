@@ -36,9 +36,13 @@ let isAlive = setInterval(() => {
 
   //detecting collison of hamburger
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
-    weight.innerHTML = parseInt(weight.innerHTML) + 5;
+    weight.innerHTML = parseInt(weight.innerHTML) + 20;
     if (weight.innerHTML > 320) {
-      alert('Game Over!');
+      toggleRestart();
+      document.querySelector('.restart-btn').addEventListener('click', function(){
+        window.location.reload();
+        return false;
+      });
     }
     if (weight.innerHTML <= 100) {
       alert('You won! Joe is in the best shape of his life.');
@@ -64,3 +68,9 @@ document.addEventListener('keydown', function (event) {
   if (event.repeat) return;
   jump(event);
 });
+
+// Functions for restart
+function toggleRestart(){
+  var myRestart = document.getElementById('restart');
+  myRestart.style.display = 'block';
+}
