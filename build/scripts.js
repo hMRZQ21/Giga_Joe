@@ -7,6 +7,7 @@ let joeShapes = ['imgs/joe.png', 'imgs/joeBetterShape.png'];
 
 let audio = new Audio('audios/theme_song.mp3');
 audio.volume = 0.1;
+audio.loop = true;
 audio.play();
 
 // Makes character jump if space is pressed
@@ -26,13 +27,10 @@ function joeOverweightAnimation() {
   if (joe.classList != 'joeOverweightWalk') {
     joe.classList.add('joeOverweightWalk');
   }
-  setTimeout(function () {
-    joe.classList.remove('joeOverweightWalk');
-  }, 9999999999);
 }
 
-//Collision function
-let isAlive = setInterval(() => {
+// Collision function
+let collision = setInterval(() => {
   //Joe's current Y postion
   let joeTop = parseInt(window.getComputedStyle(joe).getPropertyValue('top'));
 
@@ -45,7 +43,7 @@ let isAlive = setInterval(() => {
     window.getComputedStyle(apple).getPropertyValue('left')
   );
 
-  //detecting collison of hamburger, and apple
+  // Detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
     weight.innerHTML = parseInt(weight.innerHTML) + 20;
     if (weight.innerHTML > 320) {
@@ -66,6 +64,7 @@ let isAlive = setInterval(() => {
   }
 }, 150);
 
+// Changes shape depending on Joe's weight
 let checkWeight = setInterval(() => {
   if (weight.innerHTML > 150) {
     joe.style.backgroundImage = `url(${joeShapes[0]})`;
@@ -84,8 +83,9 @@ document.addEventListener('keydown', function (event) {
 
 // Functions for restart
 function toggleGameOver() {
-  var myGame = document.getElementById('game-over');
+  let myGame = document.getElementById('game-over');
   myGame.style.display = 'block';
 }
 
+// Function calls
 joeOverweightAnimation();

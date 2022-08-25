@@ -18,19 +18,6 @@
   overflow: hidden;
 }
 
-#game-over {
-  width: 800px;
-  height: 400px;
-  margin: auto;
-  position: absolute;
-  background-image: url(imgs/background.jpg);
-  background-size: 100%;
-  animation: backgroundMoveAnimation 6s linear infinite;
-  overflow: hidden;
-  z-index: 100;
-  top: 0px;
-}
-
 #weight {
   font-size: 10px;
   position: absolute;
@@ -96,7 +83,7 @@
   animation: joeOverweightAnimation 0.2s infinite linear;
 }
 
-#restart {
+#game-over {
   width: 500px;
   height: 250px;
   text-align: center;
@@ -107,6 +94,7 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.753);
+  display: none;
 }
 
 .restart-btn {
