@@ -13,6 +13,19 @@
   overflow: hidden;
 }
 
+#game-over {
+  width: 800px;
+  height: 400px;
+  margin: auto;
+  position: absolute;
+  background-image: url(imgs/background.jpg);
+  background-size: 100%;
+  animation: backgroundMoveAnimation 6s linear infinite;
+  overflow: hidden;
+  z-index: 100;
+  top: 0px;
+}
+
 #weight {
   font-family: 'Silkscreen', cursive;
   font-size: 10px;
