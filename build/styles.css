@@ -65,7 +65,7 @@
   position: relative;
   top: 200px;
   left: 200px;
-  animation: appleAnimation  infinite linear;
+  animation: appleAnimation 4s infinite linear;
 }
 
 .jump {
@@ -91,7 +91,7 @@
 
 @keyframes appleAnimation {
   0% {
-    left: 2000px;
+    left: 1500px;
   }
 
   100% {
