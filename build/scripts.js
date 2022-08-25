@@ -45,11 +45,11 @@ let isAlive = setInterval(() => {
     window.getComputedStyle(apple).getPropertyValue('left')
   );
 
-  //detecting collison of hamburger
+  //detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
     weight.innerHTML = parseInt(weight.innerHTML) + 20;
     if (weight.innerHTML > 320) {
-      toggleRestart();
+      toggleGameOver();
       document
         .querySelector('.restart-btn')
         .addEventListener('click', function () {
@@ -83,9 +83,9 @@ document.addEventListener('keydown', function (event) {
 });
 
 // Functions for restart
-function toggleRestart() {
-  var myRestart = document.getElementById('restart');
-  myRestart.style.display = 'block';
+function toggleGameOver() {
+  var myGame = document.getElementById('game-over');
+  myGame.style.display = 'block';
 }
 
 joeOverweightAnimation();
