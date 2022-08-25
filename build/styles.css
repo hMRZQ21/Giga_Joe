@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
+* {
+  font-family: 'Silkscreen', cursive;
+  color: white;
+}
+
 .game {
   width: 800px;
   height: 400px;
@@ -14,14 +19,12 @@
 }
 
 #weight {
-  font-family: 'Silkscreen', cursive;
   font-size: 10px;
   position: absolute;
   right: 0;
 }
 
 #score {
-  color: white;
   background-color: rgba(0, 0, 0, 0.341);
 }
 
@@ -44,6 +47,10 @@
   background-size: 60px 90px;
   position: relative;
   top: 100px;
+}
+
+.food {
+  z-index: -1;
 }
 
 #hamburger {
@@ -74,6 +81,33 @@
 
 .joeOverweightWalk {
   animation: joeOverweightAnimation 0.2s infinite linear;
+}
+
+#restart {
+  width: 500px;
+  height: 250px;
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.753);
+}
+
+.restart-btn {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.753);
+  color: white;
+  height: 40px;
+  position: relative;
+  top: 80px;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background-color: rgb(55, 49, 49);
 }
 
 /* Keyframes */
