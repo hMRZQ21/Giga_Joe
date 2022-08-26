@@ -14,8 +14,9 @@ body.preload *{
   padding: 0;
 }
 
-body {
+body,html {
   background-color: black;
+  height: 100%;
 }
 
 .toggle {

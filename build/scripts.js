@@ -48,7 +48,7 @@ let collision = setInterval(() => {
     window.getComputedStyle(apple).getPropertyValue('left')
   );
   //Checking if weight under an amount and win
-  if (weight.innerHTML <= 250) {
+  if (weight.innerHTML <= 150) {
     toggleWin();
     document
       .querySelector('.restart-btn2')
@@ -59,8 +59,7 @@ let collision = setInterval(() => {
   }
   // Detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
-    weight.innerHTML = parseInt(weight.innerHTML) + 20;
-    if (weight.innerHTML > 320) {
+    if (weight.innerHTML > 350) {
       toggleGameOver();
       document
         .querySelector('.restart-btn')
@@ -71,30 +70,25 @@ let collision = setInterval(() => {
     } else {
       weight.innerHTML = parseInt(weight.innerHTML) + 20;
     }
-
-    if (weight.innerHTML <= 100) {
-      alert('You won! Joe is in the best shape of his life.');
-    }
   }
   if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
-    weight.innerHTML = parseInt(weight.innerHTML) - 5;
+    weight.innerHTML = parseInt(weight.innerHTML) - 15;
   }
 }, 100);
 
 // Changes shape depending on Joe's weight
 let checkWeight = setInterval(() => {
-  if (weight.innerHTML > 150) {
+  if (weight.innerHTML > 190) {
     joe.style.backgroundImage = `url(${joeShapes[0]})`;
   }
 
-  if (weight.innerHTML <= 150) {
+  if (weight.innerHTML <= 190) {
     joe.style.backgroundImage = `url(${joeShapes[1]})`;
   }
 });
 
 // Event handlers
-// Dark/light mode
-toggle.addEventListener('click', function () {
+toggle.addEventListener('click', function () { // Dark and light mode
   if (switchIcon.classList.contains('fa-moon')) {
     switchIcon.classList.remove('fa-moon');
     switchIcon.classList.add('fa-sun');
@@ -144,7 +138,6 @@ function toggleWin() {
   hamburger.style.animationPlayState = 'paused';
   apple.style.animationPlayState = 'paused';
   clearInterval(collision);
-
   return true;
 }
 
