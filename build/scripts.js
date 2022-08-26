@@ -13,7 +13,7 @@ let gameOverDisplay = document.getElementById('game-over');
 let audio = new Audio('audios/theme_song.mp3');
 audio.volume = 0.1;
 audio.loop = true;
-audio.play();
+
 
 // Makes character jump if space is pressed
 function jump(event) {
@@ -150,3 +150,12 @@ function toggleWin() {
 
 // Function calls
 joeOverweightAnimation();
+
+// Play game
+let play_btn = document.querySelector(".play-btn")
+let play_btn_display = document.querySelector("#start-game")
+play_btn.addEventListener("click", function() {
+  document.body.classList.remove("preload")
+  audio.play();
+  play_btn_display.style.display = 'none';
+})
