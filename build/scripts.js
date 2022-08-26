@@ -6,6 +6,8 @@ const hamburger = document.getElementById('hamburger');
 const apple = document.getElementById('apple');
 let weight = document.getElementById('weightNumber');
 let joeShapes = ['imgs/joe.png', 'imgs/joeBetterShape.png'];
+let winDisplay = document.getElementById('win');
+let gameOverDisplay = document.getElementById('game-over');
 
 // Play audio
 let audio = new Audio('audios/theme_song.mp3');
@@ -18,7 +20,7 @@ function jump(event) {
   if (joe.classList != 'jump' && event.which === 32) {
     joe.classList.add('jump');
     joe.classList.remove('joeOverweightWalk');
-    weight.innerHTML = parseInt(weight.innerHTML) - 10;
+    weight.innerHTML = parseInt(weight.innerHTML) - 5;
     setTimeout(function () {
       joe.classList.remove('jump');
       joe.classList.add('joeOverweightWalk');
@@ -75,7 +77,7 @@ let collision = setInterval(() => {
     }
   }
   if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
-    weight.innerHTML = parseInt(weight.innerHTML) - 20;
+    weight.innerHTML = parseInt(weight.innerHTML) - 5;
   }
 }, 100);
 
@@ -115,27 +117,35 @@ toggle.addEventListener('click', function () {
 
 document.addEventListener('keydown', function (event) {
   if (event.repeat) return;
+  if (
+    winDisplay.style.display == 'block' ||
+    gameOverDisplay.style.display == 'block'
+  )
+    return;
   jump(event);
 });
 
 // Functions for restart
 function toggleGameOver() {
-  let myGame = document.getElementById('game-over');
-  myGame.style.display = 'block';
+  gameOverDisplay.style.display = 'block';
   document.getElementById('game').style.animationPlayState = 'paused';
   document.getElementById('joe').style.animationPlayState = 'paused';
   document.getElementById('hamburger').style.animationPlayState = 'paused';
   document.getElementById('apple').style.animationPlayState = 'paused';
   clearInterval(collision);
+
+  return true;
 }
 
 function toggleWin() {
-  let myGame = document.getElementById('win');
-  myGame.style.display = 'block';
+  winDisplay.style.display = 'block';
   document.getElementById('game').style.animationPlayState = 'paused';
-  document.getElementById('joe').style.animationPlayState = 'paused';
-  document.getElementById('hamburger').style.animationPlayState = 'paused';
-  document.getElementById('apple').style.animationPlayState = 'paused';
+  joe.style.animationPlayState = 'paused';
+  hamburger.style.animationPlayState = 'paused';
+  apple.style.animationPlayState = 'paused';
+  clearInterval(collision);
+
+  return true;
 }
 
 // Function calls
