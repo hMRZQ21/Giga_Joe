@@ -29,9 +29,7 @@ function jump(event) {
 }
 
 function joeOverweightAnimation() {
-  if (joe.classList != 'joeOverweightWalk') {
-    joe.classList.add('joeOverweightWalk');
-  }
+  if(joe.classList != 'joeOverweightWalk') { joe.classList.add('joeOverweightWalk'); }
 }
 
 // Collision function
@@ -40,16 +38,12 @@ let collision = setInterval(() => {
   let joeTop = parseInt(window.getComputedStyle(joe).getPropertyValue('top'));
 
   //get Hamburger's current x position
-  let hamburgerLeft = parseInt(
-    window.getComputedStyle(hamburger).getPropertyValue('left')
-  );
+  let hamburgerLeft = parseInt( window.getComputedStyle(hamburger).getPropertyValue('left'));
 
-  let appleLeft = parseInt(
-    window.getComputedStyle(apple).getPropertyValue('left')
-  );
+  let appleLeft = parseInt( window.getComputedStyle(apple).getPropertyValue('left'));
   //Checking if weight under an amount and win
   if (weight.innerHTML <= 150) {
-    toggleWin();
+    toggleWinLose(winDisplay);
     document
       .querySelector('.restart-btn2')
       .addEventListener('click', function () {
@@ -60,31 +54,25 @@ let collision = setInterval(() => {
   // Detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
     if (weight.innerHTML > 350) {
-      toggleGameOver();
+      toggleWinLose(gameOverDisplay);
       document
         .querySelector('.restart-btn')
         .addEventListener('click', function () {
           window.location.reload();
           return false;
         });
-    } else {
-      weight.innerHTML = parseInt(weight.innerHTML) + 20;
-    }
+    } 
+    else { weight.innerHTML = parseInt(weight.innerHTML) + 20; }
   }
-  if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
+  if (appleLeft < 60 && appleLeft > 0 && joeTop >= 180) {
     weight.innerHTML = parseInt(weight.innerHTML) - 15;
   }
 }, 170);
 
 // Changes shape depending on Joe's weight
 let checkWeight = setInterval(() => {
-  if (weight.innerHTML > 190) {
-    joe.style.backgroundImage = `url(${joeShapes[0]})`;
-  }
-
-  if (weight.innerHTML <= 190) {
-    joe.style.backgroundImage = `url(${joeShapes[1]})`;
-  }
+  if (weight.innerHTML > 190){ joe.style.backgroundImage = `url(${joeShapes[0]})`;}
+  if (weight.innerHTML <= 190){ joe.style.backgroundImage = `url(${joeShapes[1]})`;}
 });
 
 // Event handlers
@@ -95,7 +83,8 @@ toggle.addEventListener('click', function () { // Dark and light mode
     document.body.style.backgroundColor = 'black';
     document.body.style.transition = 'background-color .5s linear';
     document.getElementById('command').style.color = 'white';
-  } else {
+  } 
+  else {
     switchIcon.classList.remove('fa-sun');
     switchIcon.classList.add('fa-moon');
     document.body.style.backgroundColor = 'white';
@@ -104,51 +93,32 @@ toggle.addEventListener('click', function () { // Dark and light mode
   }
 
   switchIcon.classList.add('toggle-animation');
-  setTimeout(() => {
-    switchIcon.classList.remove('toggle-animation');
-  }, 500);
+  setTimeout(() => { switchIcon.classList.remove('toggle-animation');}, 500);
 });
 
 document.addEventListener('keydown', function (event) {
-  if (event.repeat) return;
-  if (
-    winDisplay.style.display == 'block' ||
-    gameOverDisplay.style.display == 'block'
-  )
+  if(event.repeat) return;
+  if(winDisplay.style.display == 'block' || gameOverDisplay.style.display == 'block')
     return;
   jump(event);
 });
 
-// Functions for restart
-function toggleGameOver() {
-  gameOverDisplay.style.display = 'block';
-  document.getElementById('game').style.animationPlayState = 'paused';
-  document.getElementById('joe').style.animationPlayState = 'paused';
-  document.getElementById('hamburger').style.animationPlayState = 'paused';
-  document.getElementById('apple').style.animationPlayState = 'paused';
-  clearInterval(collision);
-
-  return true;
-}
-
-function toggleWin() {
-  winDisplay.style.display = 'block';
+function toggleWinLose(condition){ 
+  condition.style.display = 'block';
   document.getElementById('game').style.animationPlayState = 'paused';
   joe.style.animationPlayState = 'paused';
   hamburger.style.animationPlayState = 'paused';
   apple.style.animationPlayState = 'paused';
   clearInterval(collision);
-  return true;
 }
 
-// Function calls
-joeOverweightAnimation();
+joeOverweightAnimation(); // Function calls
 
 // Play game
 let play_btn = document.querySelector(".play-btn")
 let play_btn_display = document.querySelector("#start-game")
 play_btn.addEventListener("click", function() {
-  document.body.classList.remove("preload")
+  document.body.classList.remove("preload");
   audio.play();
   play_btn_display.style.display = 'none';
 })

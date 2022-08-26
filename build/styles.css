@@ -159,8 +159,7 @@ body,html {
   display: none;
 }
 
-.restart-btn,
-.restart-btn2 {
+.restart-btn {
   border: none;
   padding: 5px;
   background-color: rgba(56, 37, 37, 0.753);
@@ -231,7 +230,7 @@ body,html {
 
 @keyframes jump {
   0% {
-    top: 230px;
+    top: 200px;
   }
 }
 
@@ -266,7 +265,6 @@ body,html {
 
 
 /* Play button */
-
 #start-game {
   width: 500px;
   height: 250px;
@@ -283,7 +281,7 @@ body,html {
 
 .play-btn {
   border: none;
-  padding: 5px;
+  padding: 10px;
   background-color: rgba(56, 37, 37, 0.753);
   color: white;
   height: 40px;
