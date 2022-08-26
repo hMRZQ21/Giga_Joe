@@ -138,7 +138,6 @@ function toggleWin() {
   hamburger.style.animationPlayState = 'paused';
   apple.style.animationPlayState = 'paused';
   clearInterval(collision);
-
   return true;
 }
 
