@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
-body.preload *{
+body.preload * {
   animation-duration: 0s !important;
   -webkit-animation-duration: 0s !important;
-  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
-  
+  transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s,
+    padding 0s, margin 0s !important;
+}
 
 * {
   font-family: 'Silkscreen', cursive;
@@ -14,7 +15,8 @@ body.preload *{
   padding: 0;
 }
 
-body,html {
+body,
+html {
   background-color: black;
   height: 100%;
 }
@@ -87,16 +89,6 @@ body,html {
   animation-direction: alternate;
 }
 
-/* Not being used yet */
-#joeBetterShape {
-  width: 60px;
-  height: 90px;
-  background-image: url(imgs/joeBetterShape.png);
-  background-size: 60px 90px;
-  position: relative;
-  top: 100px;
-}
-
 .food {
   z-index: -1;
 }
@@ -129,6 +121,10 @@ body,html {
 
 .joeOverweightWalk {
   animation: joeOverweightAnimation 0.2s infinite linear;
+}
+
+.joeBetterShapeWalk {
+  animation: joeBetterShapeAnimation 0.2s infinite linear;
 }
 
 #game-over {
@@ -230,6 +226,12 @@ body,html {
   }
 }
 
+@keyframes joeBetterShapeAnimation {
+  100% {
+    background-image: url(imgs/joeBetterShape2.png);
+  }
+}
+
 @keyframes jump {
   0% {
     top: 200px;
@@ -264,7 +266,6 @@ body,html {
     background-position: -901px;
   }
 }
-
 
 /* Play button */
 #start-game {
