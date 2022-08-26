@@ -129,5 +129,14 @@ function toggleGameOver() {
   clearInterval(collision);
 }
 
+function toggleWin() {
+  let myGame = document.getElementById('win');
+  myGame.style.display = 'block';
+  document.getElementById('game').style.animationPlayState = 'paused';
+  document.getElementById('joe').style.animationPlayState = 'paused';
+  document.getElementById('hamburger').style.animationPlayState = 'paused';
+  document.getElementById('apple').style.animationPlayState = 'paused';
+}
+
 // Function calls
 joeOverweightAnimation();

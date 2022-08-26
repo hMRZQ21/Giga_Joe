@@ -134,7 +134,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.753);
+  background-color: rgba(192, 42, 42, 0.753);
   display: none;
 }
 
@@ -152,9 +152,11 @@ body {
   display: none;
 }
 
-.restart-btn {
+.restart-btn,
+.restart-btn2 {
   border: none;
-  background-color: rgba(0, 0, 0, 0.753);
+  padding: 5px;
+  background-color: rgba(56, 37, 37, 0.753);
   color: white;
   height: 40px;
   position: relative;
