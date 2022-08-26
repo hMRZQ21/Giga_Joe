@@ -72,17 +72,17 @@ let collision = setInterval(() => {
     }
   }
   if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
-    weight.innerHTML = parseInt(weight.innerHTML) - 5;
+    weight.innerHTML = parseInt(weight.innerHTML) - 15;
   }
 }, 100);
 
 // Changes shape depending on Joe's weight
 let checkWeight = setInterval(() => {
-  if (weight.innerHTML > 150) {
+  if (weight.innerHTML > 190) {
     joe.style.backgroundImage = `url(${joeShapes[0]})`;
   }
 
-  if (weight.innerHTML <= 150) {
+  if (weight.innerHTML <= 190) {
     joe.style.backgroundImage = `url(${joeShapes[1]})`;
   }
 });
