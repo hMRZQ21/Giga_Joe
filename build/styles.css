@@ -164,9 +164,10 @@ body,html {
   padding: 5px;
   background-color: rgba(56, 37, 37, 0.753);
   color: white;
-  height: 40px;
+  height: 60px;
+  width: 120px;
   position: relative;
-  top: 80px;
+  top: 30px;
   cursor: pointer;
 }
 
@@ -179,9 +180,10 @@ body,html {
   border: none;
   background-color: rgba(41, 150, 14, 0.753);
   color: white;
-  height: 40px;
+  height: 60px;
+  width: 120px;
   position: relative;
-  top: 80px;
+  top: 30px;
   cursor: pointer;
 }
 
@@ -284,9 +286,10 @@ body,html {
   padding: 10px;
   background-color: rgba(56, 37, 37, 0.753);
   color: white;
-  height: 40px;
+  height: 60px;
+  width: 120px;
   position: relative;
-  top: 80px;
+  top: 50px;
   cursor: pointer;
 }
 
