@@ -126,6 +126,7 @@ function toggleGameOver() {
   document.getElementById('joe').style.animationPlayState = 'paused';
   document.getElementById('hamburger').style.animationPlayState = 'paused';
   document.getElementById('apple').style.animationPlayState = 'paused';
+  clearInterval(collision);
 }
 
 // Function calls
