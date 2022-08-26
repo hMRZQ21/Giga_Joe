@@ -43,7 +43,7 @@ let collision = setInterval(() => {
     window.getComputedStyle(apple).getPropertyValue('left')
   );
   //Checking if weight under an amount and win
-  if (weight.innerHTML == 100) {
+  if (weight.innerHTML <= 100) {
     toggleWinLose(winDisplay);
     document
       .querySelector('.restart-btn2')
@@ -88,7 +88,7 @@ let checkWeight = setInterval(() => {
     joe.classList.remove('joeOverweightWalk');
     document.getElementById('game').style.animationDuration = '2s';
     hamburger.style.animationDuration = '1s';
-    apple.style.animationDuration = '2s';
+    apple.style.animationDuration = '3.5s';
     audio.playbackRate = 1.5;
   }
 });
