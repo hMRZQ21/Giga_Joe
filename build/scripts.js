@@ -1,10 +1,13 @@
 // Variables
+const toggle = document.querySelector('.toggle-button');
+const switchIcon = document.querySelector('.fas');
 const joe = document.getElementById('joe');
 const hamburger = document.getElementById('hamburger');
 const apple = document.getElementById('apple');
 let weight = document.getElementById('weightNumber');
 let joeShapes = ['imgs/joe.png', 'imgs/joeBetterShape.png'];
 
+// Play audio
 let audio = new Audio('audios/theme_song.mp3');
 audio.volume = 0.1;
 audio.loop = true;
@@ -51,10 +54,10 @@ let collision = setInterval(() => {
         window.location.reload();
         return false;
       });
-    }
+  }
   // Detecting collison of hamburger, and apple
   if (hamburgerLeft < 60 && hamburgerLeft > 0 && joeTop >= 300) {
-    
+    weight.innerHTML = parseInt(weight.innerHTML) + 20;
     if (weight.innerHTML > 320) {
       toggleGameOver();
       document
@@ -63,16 +66,18 @@ let collision = setInterval(() => {
           window.location.reload();
           return false;
         });
-    }
-    else{
+    } else {
       weight.innerHTML = parseInt(weight.innerHTML) + 20;
     }
+
+    if (weight.innerHTML <= 100) {
+      alert('You won! Joe is in the best shape of his life.');
+    }
   }
-  
   if (appleLeft < 60 && appleLeft > 0 && joeTop >= 100) {
     weight.innerHTML = parseInt(weight.innerHTML) - 20;
   }
-}, 150);
+}, 100);
 
 // Changes shape depending on Joe's weight
 let checkWeight = setInterval(() => {
@@ -86,6 +91,28 @@ let checkWeight = setInterval(() => {
 });
 
 // Event handlers
+// Dark/light mode
+toggle.addEventListener('click', function () {
+  if (switchIcon.classList.contains('fa-moon')) {
+    switchIcon.classList.remove('fa-moon');
+    switchIcon.classList.add('fa-sun');
+    document.body.style.backgroundColor = 'black';
+    document.body.style.transition = 'background-color .5s linear';
+    document.getElementById('command').style.color = 'white';
+  } else {
+    switchIcon.classList.remove('fa-sun');
+    switchIcon.classList.add('fa-moon');
+    document.body.style.backgroundColor = 'white';
+    document.body.style.transition = 'background-color .5s linear';
+    document.getElementById('command').style.color = 'black';
+  }
+
+  switchIcon.classList.add('toggle-animation');
+  setTimeout(() => {
+    switchIcon.classList.remove('toggle-animation');
+  }, 500);
+});
+
 document.addEventListener('keydown', function (event) {
   if (event.repeat) return;
   jump(event);
@@ -94,15 +121,6 @@ document.addEventListener('keydown', function (event) {
 // Functions for restart
 function toggleGameOver() {
   let myGame = document.getElementById('game-over');
-  myGame.style.display = 'block';
-  document.getElementById('game').style.animationPlayState = 'paused';
-  document.getElementById('joe').style.animationPlayState = 'paused';
-  document.getElementById('hamburger').style.animationPlayState = 'paused';
-  document.getElementById('apple').style.animationPlayState = 'paused';
-}
-
-function toggleWin() {
-  let myGame = document.getElementById('win');
   myGame.style.display = 'block';
   document.getElementById('game').style.animationPlayState = 'paused';
   document.getElementById('joe').style.animationPlayState = 'paused';

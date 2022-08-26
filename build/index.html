@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="toggle">
+      <button class="toggle-button"><i class="fas fa-sun"></i></button>
+    </div>
+
     <div id="game">
       <div id="weight">
         <h1 id="score">Weight:<span id="weightNumber">300</span>lbs</h1>
@@ -17,15 +25,21 @@
       <div class="food" id="apple"></div>
       <div id="hamburger"></div>
       <div id="apple"></div>
-      <div id ='game-over'>
+      <div id="game-over">
         <h1>Game Over</h1>
         <button class="restart-btn">Restart Game</button>
       </div>
-      <div id ='win'>
+      <div id="win">
         <h1>You Win</h1>
         <button class="restart-btn2">Restart Game</button>
       </div>
-
+    </div>
+    <div id="commands">
+      <h1 id="command">Press space to jump</h1>
+    </div>
+    <div id="space-bar">
+      <img src="imgs/space_bar.png" alt="space bar icon" />
+    </div>
     <script src="scripts.js"></script>
   </body>
 </html>

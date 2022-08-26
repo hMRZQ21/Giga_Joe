@@ -3,6 +3,46 @@
 * {
   font-family: 'Silkscreen', cursive;
   color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.toggle {
+  flex: 1;
+  text-align: right;
+  align-self: center;
+  font-size: 2em;
+  overflow: hidden;
+}
+
+.toggle-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.fas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(137, 49, 214);
+}
+
+.toggle-animation {
+  animation: toggleAnimation 0.5s;
+}
+
+.toggle-button:hover {
+  background-color: lightgray;
 }
 
 #game {
@@ -11,6 +51,7 @@
   border: 1px solid black;
   margin: auto;
   position: relative;
+  top: 40px;
   opacity: 0.8;
   background-image: url(imgs/background.jpg);
   background-size: 100%;
@@ -140,8 +181,39 @@
   background-color: rgb(55, 49, 49);
 }
 
+#commands {
+  margin-top: 70px;
+  text-align: center;
+}
+
+#space-bar {
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#space-bar img {
+  width: 200px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 /* Keyframes */
+@keyframes toggleAnimation {
+  0% {
+    transform: translate(0, 200px);
+  }
+}
+
 @keyframes joeOverweightAnimation {
   100% {
     background-image: url(imgs/joe2.png);
