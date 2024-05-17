@@ -1,4 +1,5 @@
-# CTPHackathon2022
+# Giga Joe
+_A submission to the CTP 2022 Health & Wellness Hackathon._
 
 A web based game design, similar to the google search engine dinosaur game. Where Joe, an overweight character, starts running and dodging obstacles in order to become more fit. 
 
